@@ -1,0 +1,10 @@
+h1 {
+  font-size: 2em;
+  color: #333;
+  text-align: center;
+}
+
+.gridcontainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
