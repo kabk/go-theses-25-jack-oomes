@@ -166,6 +166,7 @@ h2 {
   padding-top: 0.2rem;
   z-index: 1;
   filter: blur(0.6px);
+  will-change: filter;
   /* filter: blur(0.05rem); */
 }
 
@@ -197,6 +198,7 @@ h2 {
   grid-column: 2 / span 2;
   line-height: 2.5rem;
   filter: blur(0.6px);
+  will-change: filter;
   /* filter: blur(0.05rem); */
 }
 /* .borderlinecircle {
@@ -258,6 +260,7 @@ h3 {
   hyphens: auto;
   hyphenate-limit-chars: 3 4 3;
   filter: blur(0.6px);
+  will-change: filter;
   /* filter: blur(0.05rem); */
 }
 
@@ -314,12 +317,14 @@ h3 {
   /* border-right: 0.1rem solid #000000; */
   /* padding-top: 2rem; */
   filter: blur(0.6px);
+  will-change: filter;
 }
 footer {
   grid-column: 1 / span 2;
   /* border-right: 0.1rem solid #000000; */
   /* text-align: justify; */
   filter: blur(0.6px);
+  will-change: filter;
   padding-bottom: 2rem;
 }
 
@@ -727,6 +732,7 @@ figcaption {
   border-top: 0.2rem solid #000000;
   border-bottom: 0.2rem solid #000000;
   filter: blur(0.05rem);
+  will-change: filter;
 }
 
 .subchaptertitle {
@@ -736,6 +742,7 @@ figcaption {
   padding-bottom: 2rem;
   grid-column: 1 / span 3;
   filter: blur(0.05rem);
+  will-change: filter;
 }
 
 /* .chapterimg {
@@ -837,7 +844,7 @@ figcaption {
   max-width: 100%; /* Ensure the images don't stretch beyond the parent div */
   z-index: 9900;
   object-fit: contain;
-  filter: saturate(200%);
+  filter: saturate(180%);
 }
 
 .fade-in-out {
@@ -886,7 +893,11 @@ figcaption {
   }
 
   .sun-image_2 {
-    width: 60vw;
+    width: 80vw;
+  }
+
+  .sun-image {
+    width: 80vw;
   }
 
   .tablecontentgrid {
@@ -907,7 +918,7 @@ figcaption {
     font-size: 1.3rem;
     line-height: 1.6rem;
     text-align: justify;
-    word-spacing: 0.02rem; /* Adjust as needed */
+    word-spacing: 0.03rem; /* Adjust as needed */
     letter-spacing: 0.02rem;
     /* filter: blur(0.2px); */
     /* word-spacing: 0.04em; 
@@ -926,6 +937,13 @@ figcaption {
 
   figcaption {
     filter: blur(0.1px);
+  }
+  .abstract {
+    filter: blur(0.2px);
+  }
+
+  .tableofcontent {
+    filter: blur(0.2px);
   }
   .abstractpara {
     border-right: none;
