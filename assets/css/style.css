@@ -862,7 +862,7 @@ figcaption {
     /* height: 100vh; */
   }
   h1 {
-    font-size: 7rem;
+    width: 5rem;
   }
   .thesis {
     position: relative; /* Change to relative positioning so it flows with the layout */
