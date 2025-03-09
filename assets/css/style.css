@@ -908,10 +908,10 @@ figcaption {
     /* filter: blur(0.2px); */
     /* word-spacing: 0.04em; 
   letter-spacing: 0.0em; */
-    filter: blur(clamp(0.05px, 0.5vw, 0.1px));
+    filter: blur(0.1px);
   }
   .footnote {
-    filter: blur(0.2px);
+    filter: blur(0.1px);
   }
 
   [id^="fnref-"] {
@@ -961,6 +961,7 @@ figcaption {
 
 @media (min-width: 1920px) {
   .selfpara {
-    filter: blur(clamp(0.05px, 0.2vw, 0.2px)); /* Less blur for large screens */
+    font-size: 2.2rem;
+    filter: blur(0.1px); /* Less blur for large screens */
   }
 }
