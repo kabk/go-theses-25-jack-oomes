@@ -309,7 +309,7 @@ h3 {
 
   /* border-right: 0.1rem solid #000000; */
   /* padding-top: 2rem; */
-  filter: blur(clamp(0.2px, 1vw, 0.5px));
+  filter: blur(clamp(0.2px, 1vw, 0.6px));
 }
 footer {
   grid-column: 1 / span 2;
@@ -907,7 +907,7 @@ figcaption {
     /* filter: blur(0.2px); */
     /* word-spacing: 0.04em; 
   letter-spacing: 0.0em; */
-    filter: blur(clamp(0.1px, 0.8vw, 0.3px));
+    filter: blur(clamp(0.05px, 0.8vw, 0.2px));
   }
   .footnote {
     filter: blur(0.2px);
@@ -955,5 +955,11 @@ figcaption {
 
   .italicsbib {
     font-size: small !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  .selfpara {
+    filter: blur(clamp(0.1px, 0.5vw, 0.3px)); /* Less blur for large screens */
   }
 }
