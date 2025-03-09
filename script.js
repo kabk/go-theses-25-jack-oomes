@@ -30,11 +30,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 window.onload = function () {
-  // Get all the images inside .sunburst
-  const sunImages = document.querySelectorAll(".sunburst .sun-image");
+  // Get all the images inside .sunburst and .sunburst_2
+  const sunImages1 = document.querySelectorAll(".sunburst .sun-image");
+  const sunImages2 = document.querySelectorAll(".sunburst_2 .sun-image_2");
 
   // Function to add random images with a fade-in and fade-out effect
-  function addRandomImages() {
+  function addRandomImages(sunImages, container) {
     // Pick 3 random images from the sunImages list
     const randomImages = [];
     while (randomImages.length < 3) {
@@ -45,26 +46,25 @@ window.onload = function () {
       }
     }
 
-    // Get the title container
-    const title = document.querySelector(".title");
-
     // Set up random positioning for the chosen images
     randomImages.forEach((image) => {
-      // Clone the image to prevent removing it from the sunburst div
+      // Clone the image to prevent removing it from the original div
       const clonedImage = image.cloneNode(true);
 
-      // Randomize position within the .title container
-      const randomX = Math.random() * (title.offsetWidth - clonedImage.width);
-      const randomY = Math.random() * (title.offsetHeight - clonedImage.height);
+      // Calculate random positioning within the parent container using vh/vw units
+      const randomX =
+        Math.random() * (container.offsetWidth - clonedImage.width);
+      const randomY =
+        Math.random() * (container.offsetHeight - clonedImage.height);
 
       // Apply the styles to the cloned image
       clonedImage.style.position = "absolute";
-      clonedImage.style.left = `${randomX}px`;
-      clonedImage.style.top = `${randomY}px`;
+      clonedImage.style.left = `${(randomX / window.innerWidth) * 100}vw`; // Using vw for horizontal positioning
+      clonedImage.style.top = `${(randomY / window.innerHeight) * 100}vh`; // Using vh for vertical positioning
       clonedImage.style.opacity = 0; // Start with opacity 0 for fade-in effect
 
-      // Append the image to the title container
-      title.appendChild(clonedImage);
+      // Append the image to the parent container
+      container.appendChild(clonedImage);
 
       // Add fade-in and fade-out classes
       clonedImage.classList.add("fade-in-out");
@@ -72,15 +72,88 @@ window.onload = function () {
   }
 
   // Add images immediately when the page loads
-  addRandomImages();
+  const title = document.querySelector(".title");
+  const sunburst2 = document.querySelector(".sunburst_2");
+  addRandomImages(sunImages1, title); // Images for .sunburst go into .title
+  addRandomImages(sunImages2, sunburst2); // Images for .sunburst_2 go into .sunburst_2
 
   // Set an interval to repeat the process every 8 seconds (same duration as the fade-in-out cycle)
-  setInterval(addRandomImages, 8000);
+  setInterval(function () {
+    addRandomImages(sunImages1, title); // Images for .sunburst go into .title
+    addRandomImages(sunImages2, sunburst2); // Images for .sunburst_2 go into .sunburst_2
+  }, 500);
 
   // Optionally, you can make the .sunburst container hidden (already in the original CSS)
   const sunburst = document.querySelector(".sunburst");
   sunburst.style.display = "none";
+
+  sunburst2.style.display = "block";
 };
+
+// window.onload = function () {
+//   // Get all the images inside .sunburst and .sunburst_2
+//   const sunImages1 = document.querySelectorAll(".sunburst .sun-image");
+//   const sunImages2 = document.querySelectorAll(".sunburst_2 .sun-image_2");
+
+//   // Function to add random images with a fade-in and fade-out effect
+//   function addRandomImages(sunImages, container) {
+//     // Pick 3 random images from the sunImages list
+//     const randomImages = [];
+//     while (randomImages.length < 3) {
+//       const randomIndex = Math.floor(Math.random() * sunImages.length);
+//       const randomImage = sunImages[randomIndex];
+//       if (!randomImages.includes(randomImage)) {
+//         randomImages.push(randomImage);
+//       }
+//     }
+
+//     // Set up random positioning for the chosen images
+//     randomImages.forEach((image) => {
+//       // Clone the image to prevent removing it from the original div
+//       const clonedImage = image.cloneNode(true);
+
+//       // Calculate random positioning within the parent container using vh/vw units
+//       const randomX =
+//         ((Math.random() * (container.offsetWidth - clonedImage.width)) /
+//           window.innerWidth) *
+//         100; // Using vw
+//       const randomY =
+//         ((Math.random() * (container.offsetHeight - clonedImage.height)) /
+//           window.innerHeight) *
+//         100; // Using vh
+
+//       // Apply the styles to the cloned image
+//       clonedImage.style.position = "absolute";
+//       clonedImage.style.left = `${randomX}vw`; // Using vw for horizontal positioning
+//       clonedImage.style.top = `${randomY}vh`; // Using vh for vertical positioning
+//       clonedImage.style.opacity = 0; // Start with opacity 0 for fade-in effect
+
+//       // Append the image to the parent container
+//       container.appendChild(clonedImage);
+
+//       // Add fade-in and fade-out classes
+//       clonedImage.classList.add("fade-in-out");
+//     });
+//   }
+
+//   // Add images immediately when the page loads
+//   const title = document.querySelector(".title");
+//   const sunburst2 = document.querySelector(".sunburst_2");
+//   addRandomImages(sunImages1, title); // Images for .sunburst go into .title
+//   addRandomImages(sunImages2, sunburst2); // Images for .sunburst_2 go into .sunburst_2
+
+//   // Set an interval to repeat the process every 8 seconds (same duration as the fade-in-out cycle)
+//   setInterval(function () {
+//     addRandomImages(sunImages1, title); // Images for .sunburst go into .title
+//     addRandomImages(sunImages2, sunburst2); // Images for .sunburst_2 go into .sunburst_2
+//   }, 500);
+
+//   // Optionally, you can make the .sunburst container hidden (already in the original CSS)
+//   const sunburst = document.querySelector(".sunburst");
+//   sunburst.style.display = "none";
+
+//   sunburst2.style.display = "block";
+// };
 
 // document.addEventListener("DOMContentLoaded", () => {
 //   const imagePaths = [

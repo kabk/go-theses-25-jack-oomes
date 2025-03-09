@@ -3,6 +3,7 @@ html {
 }
 html,
 body {
+  overflow-x: hidden;
   height: 100%;
   width: 100%;
   margin: 0rem;
@@ -27,14 +28,42 @@ body {
   font-display: swap;
 }
 
+.sunburst_2 {
+  /* background-color: blue; */
+  position: fixed; /* Fix the position so it stays on the screen even when scrolling */
+  top: 0;
+  left: 0;
+  width: 100%; /* Cover the entire width of the viewport */
+  height: 100%; /* Cover the entire height of the viewport */
+  z-index: -1; /* Place it behind all other elements */
+  pointer-events: none; /* Ensure it doesn't interfere with other interactions on the page */
+  overflow: visible;
+}
+.sun-image_2 {
+  top: 0;
+  left: 0;
+  /* backdrop-filter: saturate(80%); */
+  position: absolute;
+  opacity: 0;
+  transition: opacity 4s ease-in-out;
+  width: 30vw; /* Set width based on the viewport width */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure the images don't stretch beyond the parent div */
+  z-index: 9900;
+}
+
 .title {
-  margin-top: 0rem;
-  background-color: black;
+  margin: 0rem;
+  /* background-color: black; */
   /* padding: 1rem; */
   width: 100%;
   height: 100%;
+
   display: flex;
   justify-content: center;
+  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   /* overflow: hidden; */
   position: relative;
   /* position: relative; */
@@ -43,20 +72,51 @@ body {
 }
 
 h1 {
-  margin-bottom: 52%;
+  margin: 0;
+  /* margin-bottom: 15%; */
   letter-spacing: -0.05rem;
   padding: 1rem;
   opacity: 20%;
-  font-size: 5em;
+  font-size: 9em;
   font-family: "Eldorado";
-
+  align-self: flex-end;
   color: #000000;
   /* justify-self: center; */
   z-index: 100;
   position: absolute;
+  /* left: 34%; Center horizontally */
+  left: 50%;
+  top: 30%;
+  transform: translateX(-50%);
   filter: blur(0.2rem);
+  /* align-self: center;
+  justify-self: center; */
 
   /* text-decoration: underline 0.2rem; */
+}
+
+.thesis {
+  margin: 0rem;
+  padding: 1rem;
+  padding-left: 5rem;
+  bottom: 7%;
+  /* top: 35%; */
+  height: auto;
+  width: auto;
+  align-self: flex-end;
+  font-size: 1rem;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  position: absolute; /* Use relative positioning for normal flow */
+  left: 0 !important; /* Align it to the left side */
+  z-index: 1;
+  line-height: 1rem;
+  opacity: 0.5;
+}
+
+.thesis span {
+  display: block; /* Makes each span appear on a new line */
+  margin-bottom: 0.5rem; /* Optional: adds spacing between lines */
 }
 
 /* .blurryvision {
@@ -87,7 +147,7 @@ h1 {
   max-width: 100% !important;
   grid-template-columns: repeat(6, 1fr);
   /* grid-auto-rows: min-content; */
-
+  /* opacity: 0.8; */
   align-items: start;
 }
 
@@ -112,7 +172,8 @@ h2 {
   grid-template-columns: repeat(3, 1fr);
   padding: 2rem;
   line-height: 2.5rem;
-  background-color: rgba(240, 240, 240, 0.014);
+
+  /* filter: blur(0.1rem); */
 }
 
 .tableofcontent {
@@ -162,7 +223,7 @@ h3 {
   border-right: 0.2rem solid #000000;
   padding: 2rem;
   /* background-color: rgba(240, 240, 240, 0.014); */
-  filter: blur(0.05rem);
+
   /* justify-content: center;
   align-items: center; */
 }
@@ -178,6 +239,7 @@ h3 {
   margin: 0;
   grid-column: 1 / span 3;
   border-bottom: 0.2rem solid #000000;
+  filter: blur(0.05rem);
 }
 
 .abstracttext {
@@ -239,10 +301,10 @@ h3 {
   grid-column: 1 / span 3;
   line-height: 2.5rem;
   text-align: justify;
-  word-spacing: 0.01em; /* Adjust as needed */
-  letter-spacing: 0.02em; /* Adjust as needed */
+  word-spacing: 0.04em; /* Adjust as needed */
+  letter-spacing: 0.025em; /* Adjust as needed */
   hyphens: auto;
-  hyphenate-limit-chars: 6 4 3;
+
   /* border-right: 0.1rem solid #000000; */
   /* padding-top: 2rem; */
   filter: blur(0.04rem);
@@ -267,12 +329,43 @@ footer {
   font-size: 1.1rem;
 }
 
+.footnoteitalics {
+  font-family: "Eldorado";
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
 .footnote li {
   margin-bottom: 0.5rem; /* Adds spacing between different footnotes */
 }
 
 .footnote li:last-child {
   margin-bottom: 0; /* Removes extra spacing after the last footnote */
+}
+
+sup {
+  position: relative;
+  vertical-align: top; /* Ensures it doesn’t extend line height */
+  font-size: 0.75em; /* Keep it readable */
+  top: -0.5rem;
+}
+
+.footnote a {
+  color: black;
+  text-decoration: none; /* Removes underline */
+}
+
+.footnote a:hover {
+  text-decoration: underline; /* Optional: Underline on hover */
+}
+
+.instagram-link {
+  color: black;
+  text-decoration: none;
+}
+
+.instagram-link:hover {
+  text-decoration: underline;
 }
 
 .italics {
@@ -289,7 +382,7 @@ footer {
   padding-right: 0rem;
   display: inline-block;
   grid-column: 4 / span 3;
-  border: 0.1rem solid #000000;
+  /* border: 0.1rem solid #000000; */
   /* border-top: 0.1rem solid #000000; */
   max-width: 100%;
   /* padding-left: 2.5rem; */
@@ -310,10 +403,12 @@ footer {
   width: 100%;
   margin: 0;
   padding: 0;
+
   /* cursor: pointer; */
 }
 
 .caption img {
+  /* border-top: 1pt solid black; */
   width: 100%; /* Ensure the image scales down to fit its container */
   height: 80%; /* Maintain aspect ratio */
   object-fit: cover; /* Ensure the image scales up and covers the container */
@@ -367,6 +462,7 @@ footer {
 }
 
 .caption.slideshow .slidefig figcaption {
+  height: auto;
   /* color: white; */
   font-size: 1.5rem;
   text-align: center;
@@ -376,6 +472,7 @@ footer {
 
 .caprosi {
   grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
   display: grid;
   grid-column: 4 / span 3;
   max-width: 100%;
@@ -389,9 +486,11 @@ footer {
   display: flex;
   flex-direction: column;
   grid-column: span 2;
-  border: 0.1rem solid #000000;
+
+  /* border-top: 1pt black solid; */
+  /* border: 0.1rem solid #000000; */
   margin-bottom: 1rem;
-  margin-right: 1rem;
+  /* margin-right: 1rem; */
 }
 
 .caprosi img {
@@ -431,18 +530,22 @@ footer {
 .capspirugrid {
   grid-column: 4 / span 3;
   grid-template-columns: repeat(4, 1fr);
-  display: grid;
+  display: flex;
+  gap: 1rem;
+  /* display: grid; */
   width: 100%;
 }
 
 .capspiru {
   /* Makes each .capspiru div take up 2 columns */
-  display: flex;
-  flex-direction: column;
+  /* display: flex;  */
+  /* flex-direction: column; */
   width: 100%;
-
+  margin-bottom: 2rem;
   justify-content: space-between;
+  margin-bottom: 2rem;
 }
+
 .capspiru:nth-child(1) {
   grid-column: 1 / span 2;
 }
@@ -455,10 +558,18 @@ footer {
   margin: 0; /* Removes default margin */
   padding: 0;
   display: flex;
-  flex-direction: column;
+  width: 100%;
   justify-content: center;
-  transform: scale(0.8); /* Centers content horizontally */
-  border: 0.1rem solid #000000;
+  align-items: flex-end;
+
+  /* Centers content horizontally */
+  /* border: 0.1rem solid #000000; */
+  /* border-top: 1pt black solid; */
+}
+
+.capspiru figure figcaption {
+  margin-top: auto;
+  background-color: white;
 }
 
 .capspiru img {
@@ -476,12 +587,19 @@ footer {
   border-left: 0.1rem solid #000000;
 } */
 
+.figcaption_92 {
+  margin-right: 3rem;
+}
+
 figcaption {
+  text-wrap: wrap;
   display: flex;
   font-family: "Eldorado";
   font-size: 1.2rem !important;
+  border: 1pt black solid;
+  background-color: white;
 
-  border-top: 0.1rem solid #000000;
+  /* border-top: 0.1rem solid #000000; */
   /* text-align: left !important; */
   /* padding-left: 0.5rem; */
 
@@ -496,14 +614,16 @@ figcaption {
 .figimgcontainer {
   padding-left: 0rem;
   display: flex;
+  height: 100%;
   /* border-right: 0.1rem solid #000000; */
   height: auto;
-  width: 10%;
+  width: 100px;
+  /* width: 10% !important; */
   max-width: 5rem;
   object-fit: contain;
   padding-bottom: 0.5rem;
   padding-top: 0.7rem;
-  border-right: 0.1rem solid #000000;
+  /* border-right: 0.1rem solid #000000; */
   /* Centers images */
 
   /* Aligns images to the right */
@@ -511,6 +631,7 @@ figcaption {
 }
 
 .figimgcontainer img {
+  border: none;
   margin: 0;
   height: auto;
   cursor: pointer;
@@ -530,8 +651,9 @@ figcaption {
   padding-left: 1rem;
   padding-bottom: 0.5rem;
   padding-top: 0.7rem;
-  text-align: right !important;
-  white-space: nowrap;
+  text-align: left;
+  /* text-align: right !important; */
+  /* white-space: nowrap; */
 }
 
 .capspiru.slideshow {
@@ -584,7 +706,7 @@ figcaption {
 
 .capspiru.slideshow .slidefig figcaption {
   /* color: white; */
-  font-size: 1.2rem;
+  font-size: 1.2rem !important;
   text-align: center;
 
   /* margin-top: 1rem; */
@@ -626,7 +748,7 @@ figcaption {
   display: grid;
   box-sizing: border-box;
   position: relative;
-
+  height: 100%;
   /* max-height: 70%; */
   max-width: 100% !important;
   grid-template-columns: repeat(6, 1fr);
@@ -636,24 +758,19 @@ figcaption {
   /* grid-auto-rows: min-content; */
 
   align-items: start;
-  background: url("/assets/images/sun burst/backgroundbib.jpg") no-repeat bottom
-    center;
-  background-size: cover;
 }
 .bibliographypara {
   grid-column: 1 / span 3;
   display: grid;
 
   margin-bottom: 2.5rem;
-
-  background-color: rgba(240, 240, 240, 0.014);
 }
 
 .bibliographygrid::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.3); /* Adjust transparency here */
+
   z-index: 0;
 }
 .bibliographygrid > * {
@@ -694,18 +811,31 @@ figcaption {
 /* .bibliographybreak {
   line-height: 1rem;
 } */
+
+.sunburst {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  display: none;
+}
+
 .sun-image {
+  top: 0;
+  left: 0;
+  /* backdrop-filter: saturate(80%); */
   position: absolute;
   opacity: 0;
   transition: opacity 4s ease-in-out;
-  width: 50vw; /* Set width based on the viewport width */
-  height: auto; /* Maintain aspect ratio */
+  width: 70vw; /* Set width based on the viewport width */
+  max-height: auto; /* Maintain aspect ratio */
   max-width: 100%; /* Ensure the images don't stretch beyond the parent div */
-  z-index: 9999;
+  z-index: 9900;
+  object-fit: contain;
+  filter: saturate(150%);
 }
 
 .fade-in-out {
-  animation: fadeInOut 8s forwards; /* 4s fade-in and 4s fade-out */
+  animation: fadeInOut 6s forwards; /* 4s fade-in and 4s fade-out */
 }
 
 @keyframes fadeInOut {
@@ -721,12 +851,40 @@ figcaption {
 }
 
 @media (max-width: 779px) {
+  .title {
+    height: 100vh;
+    flex-direction: column;
+    display: block;
+  }
+
+  .title img {
+    /* height: 100vh; */
+  }
+
+  .thesis {
+    position: relative; /* Change to relative positioning so it flows with the layout */
+    top: 75%;
+    padding-left: 5rem; /* Optional: Adjust padding for smaller screens */
+    width: 100%; /* Ensure it takes full width */
+    font-size: 1rem;
+    bottom: 0;
+    /* Adjust font size for smaller screens */
+    /* Optional: Center text */
+  }
+  .together-image {
+    height: 100%;
+    width: auto;
+  }
   .tablecontentgrid {
     display: block;
   }
 
   .content {
     display: block;
+  }
+
+  .selfpara {
+    padding-right: 0rem;
   }
 
   .bibliographygrid {
