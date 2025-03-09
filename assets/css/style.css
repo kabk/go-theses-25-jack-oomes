@@ -29,6 +29,7 @@ body {
 }
 
 .sunburst_2 {
+  /* margin-left: -100%; */
   /* background-color: blue; */
   position: fixed; /* Fix the position so it stays on the screen even when scrolling */
   top: 0;
@@ -46,7 +47,7 @@ body {
   position: absolute;
   opacity: 0;
   transition: opacity 4s ease-in-out;
-  width: 30vw; /* Set width based on the viewport width */
+  width: 40vw; /* Set width based on the viewport width */
   height: auto; /* Maintain aspect ratio */
   max-width: 100%; /* Ensure the images don't stretch beyond the parent div */
   z-index: 9900;
@@ -99,7 +100,7 @@ h1 {
   margin: 0rem;
   padding: 1rem;
   padding-left: 5rem;
-  bottom: 5rem;
+  bottom: 5%;
   /* top: 35%; */
   height: auto;
   width: auto;
@@ -782,8 +783,6 @@ figcaption {
   display: grid;
 
   margin-bottom: 2.5rem;
-
-  background-color: rgba(240, 240, 240, 0.014);
 }
 
 .bibliography {
@@ -813,10 +812,11 @@ figcaption {
 } */
 
 .sunburst {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   position: absolute;
   display: none;
+  /* margin-left: -80%; */
 }
 
 .sun-image {
@@ -860,7 +860,9 @@ figcaption {
   .title img {
     /* height: 100vh; */
   }
-
+  h1 {
+    font-size: 7rem;
+  }
   .thesis {
     position: relative; /* Change to relative positioning so it flows with the layout */
     top: 75%;
@@ -875,6 +877,11 @@ figcaption {
     height: 100%;
     width: auto;
   }
+
+  .sun-image_2 {
+    width: 60vw;
+  }
+
   .tablecontentgrid {
     display: block;
   }
@@ -893,8 +900,12 @@ figcaption {
 
   .bibliographytext {
     font-size: small !important;
-    width: 100%;
+    text-wrap: wrap !important;
+
     /* margin-bottom: 0rem !important; */
+  }
+  .bibliographypara {
+    max-width: 100%;
   }
 
   .italicsbib {
