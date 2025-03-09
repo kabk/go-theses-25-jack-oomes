@@ -196,6 +196,7 @@ h2 {
   font-size: 2rem;
   grid-column: 2 / span 2;
   line-height: 2.5rem;
+  filter: blur(0.6px);
   /* filter: blur(0.05rem); */
 }
 /* .borderlinecircle {
@@ -225,6 +226,7 @@ h3 {
   line-height: 2.5rem;
   border-right: 0.2rem solid #000000;
   padding: 2rem;
+
   /* background-color: rgba(240, 240, 240, 0.014); */
 
   /* justify-content: center;
@@ -255,6 +257,7 @@ h3 {
   letter-spacing: 0.02em; /* Adjust as needed */
   hyphens: auto;
   hyphenate-limit-chars: 3 4 3;
+  filter: blur(0.6px);
   /* filter: blur(0.05rem); */
 }
 
@@ -300,7 +303,7 @@ h3 {
   padding-right: 3rem;
   /* margin-top: 1rem; */
   font-family: "Eldorado";
-  font-size: 2rem;
+  font-size: 2.1rem;
   grid-column: 1 / span 3;
   line-height: 2.7rem;
   text-align: justify;
@@ -834,7 +837,7 @@ figcaption {
   max-width: 100%; /* Ensure the images don't stretch beyond the parent div */
   z-index: 9900;
   object-fit: contain;
-  filter: saturate(150%);
+  filter: saturate(200%);
 }
 
 .fade-in-out {
@@ -860,12 +863,12 @@ figcaption {
     display: block;
   }
 
-  .title img {
-    /* height: 100vh; */
-  }
+  /* .title img {
+     height: 100vh; 
+  } */
   h1 {
     font-size: 5rem;
-    filter: blur(0.7px);
+    filter: blur(1.5px);
   }
   .thesis {
     position: relative; /* Change to relative positioning so it flows with the layout */
@@ -928,14 +931,16 @@ figcaption {
     border-right: none;
   }
   .abstracttext {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.6rem;
     word-spacing: 0.02em; /* Adjust as needed */
     letter-spacing: 0.02rem;
+    filter: blur(0.2px);
   }
   .tableofcontentext {
     font-size: 1.2rem;
     line-height: 1.6rem;
+    filter: blur(0.2px);
   }
 
   .italics {
@@ -944,6 +949,10 @@ figcaption {
 
   .bibliographygrid {
     display: block;
+  }
+
+  .bibliographypara {
+    margin-bottom: 0rem;
   }
 
   .bibliographytext {
@@ -962,9 +971,9 @@ figcaption {
   }
 }
 
-@media (min-width: 1366px) {
+/* @media (min-width: 1920px) {
   .selfpara {
     font-size: 2.2rem;
-    filter: blur(0.4px); /* Less blur for large screens */
+    filter: blur(0.4px);
   }
-}
+} */
