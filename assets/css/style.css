@@ -303,19 +303,19 @@ h3 {
   grid-column: 1 / span 3;
   line-height: 2.5rem;
   text-align: justify;
-  word-spacing: 0.04em; /* Adjust as needed */
+  word-spacing: 0.02em; /* Adjust as needed */
   letter-spacing: 0.02rem; /* Adjust as needed */
   hyphens: auto;
 
   /* border-right: 0.1rem solid #000000; */
   /* padding-top: 2rem; */
-  filter: blur(clamp(0.2px, 0.8vw, 0.6px));
+  filter: blur(0.5px);
 }
 footer {
   grid-column: 1 / span 2;
   /* border-right: 0.1rem solid #000000; */
   /* text-align: justify; */
-  filter: blur(0.5pt);
+  filter: blur(0.6px);
   padding-bottom: 2rem;
 }
 
@@ -324,7 +324,6 @@ footer {
   font-size: 1.2rem;
   /* line-height: 200%; */
   padding-left: 0rem;
-  filter: blur(0.6px);
 }
 [id^="fnref-"] {
   color: rgb(0, 0, 0);
@@ -908,9 +907,9 @@ figcaption {
     /* filter: blur(0.2px); */
     /* word-spacing: 0.04em; 
   letter-spacing: 0.0em; */
-    filter: blur(clamp(0.05px, 0.5vw, 0.1px));
+    filter: blur(0.2px);
   }
-  .footnote {
+  footer {
     filter: blur(0.1px);
   }
 
@@ -921,7 +920,7 @@ figcaption {
   }
 
   figcaption {
-    filter: blur(0.2px);
+    filter: blur(0.1px);
   }
   .abstractpara {
     border-right: none;
@@ -929,6 +928,8 @@ figcaption {
   .abstracttext {
     font-size: 1.2rem;
     line-height: 1.6rem;
+    word-spacing: 0.02em; /* Adjust as needed */
+    letter-spacing: 0.02rem;
   }
   .tableofcontentext {
     font-size: 1.2rem;
@@ -962,6 +963,6 @@ figcaption {
 @media (min-width: 1920px) {
   .selfpara {
     font-size: 2.2rem;
-    filter: blur(clamp(0.05px, 0.8vw, 0.2px)); /* Less blur for large screens */
+    filter: blur(0.4px); /* Less blur for large screens */
   }
 }
