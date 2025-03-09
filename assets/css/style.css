@@ -90,7 +90,7 @@ h1 {
   left: 50%;
   top: 30%;
   transform: translateX(-50%);
-  filter: blur(0.2rem);
+  /* filter: blur(0.2rem); */
   /* align-self: center;
   justify-self: center; */
 
@@ -165,7 +165,7 @@ h2 {
   padding-bottom: 0.3rem;
   padding-top: 0.2rem;
   z-index: 1;
-  filter: blur(0.05rem);
+  /* filter: blur(0.05rem); */
 }
 
 .tablecontainer {
@@ -186,7 +186,7 @@ h2 {
   grid-row: auto;
   height: min-content;
   /* text-align: center; */
-  filter: blur(0.05rem);
+  /* filter: blur(0.05rem); */
 }
 .tableofcontentext {
   margin: 0;
@@ -195,7 +195,7 @@ h2 {
   font-size: 2rem;
   grid-column: 2 / span 2;
   line-height: 2.5rem;
-  filter: blur(0.05rem);
+  /* filter: blur(0.05rem); */
 }
 /* .borderlinecircle {
   width: 60%;
@@ -241,7 +241,7 @@ h3 {
   margin: 0;
   grid-column: 1 / span 3;
   border-bottom: 0.2rem solid #000000;
-  filter: blur(0.05rem);
+  /* filter: blur(0.05rem); */
 }
 
 .abstracttext {
@@ -254,7 +254,7 @@ h3 {
   letter-spacing: 0.02em; /* Adjust as needed */
   hyphens: auto;
   hyphenate-limit-chars: 3 4 3;
-  filter: blur(0.05rem);
+  /* filter: blur(0.05rem); */
 }
 
 /* .triangle_one {
@@ -303,19 +303,19 @@ h3 {
   grid-column: 1 / span 3;
   line-height: 2.5rem;
   text-align: justify;
-  word-spacing: 0.04em; /* Adjust as needed */
-  letter-spacing: 0.025em; /* Adjust as needed */
+  word-spacing: 0.02em; /* Adjust as needed */
+  letter-spacing: 0.02rem; /* Adjust as needed */
   hyphens: auto;
 
   /* border-right: 0.1rem solid #000000; */
   /* padding-top: 2rem; */
-  filter: blur(0.04rem);
+  /* filter: blur(0.04rem); */
 }
 footer {
   grid-column: 1 / span 2;
   /* border-right: 0.1rem solid #000000; */
   /* text-align: justify; */
-  filter: blur(0.05rem);
+  filter: blur(0.5pt);
   padding-bottom: 2rem;
 }
 
@@ -605,7 +605,7 @@ figcaption {
   /* text-align: left !important; */
   /* padding-left: 0.5rem; */
 
-  filter: blur(0.05rem);
+  filter: blur(0.5pt);
   /* align-items: center;  
 
   width: 100%;
@@ -898,17 +898,29 @@ figcaption {
   .selfpara {
     padding-right: 0rem;
     font-size: 1.2rem;
-    line-height: 1.2rem;
+    line-height: 1.6rem;
     text-align: justify;
+    word-spacing: 0.02rem; /* Adjust as needed */
+    letter-spacing: 0.02rem;
     /* word-spacing: 0.04em; 
   letter-spacing: 0.0em; */
+  }
+
+  [id^="fnref-"] {
+    color: rgb(0, 0, 0);
+    text-decoration: none !important;
+    font-size: 0.6rem;
   }
   .abstractpara {
     border-right: none;
   }
   .abstracttext {
-    font-size: 1rem;
-    line-height: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+  .tableofcontentext {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
   }
 
   .italics {
@@ -923,10 +935,11 @@ figcaption {
     font-size: small !important;
     text-wrap: wrap !important;
 
+    overflow-wrap: break-word; /* Prevent text overflow */
+    word-wrap: break-word; /* Break long words when necessary */
+    word-break: break-word;
+
     /* margin-bottom: 0rem !important; */
-  }
-  .bibliographypara {
-    max-width: 100%;
   }
 
   .italicsbib {
