@@ -864,6 +864,7 @@ figcaption {
     /* height: 100vh; */
   }
   h1 {
+    font-size: 5rem;
     filter: blur(0.7px);
   }
   .thesis {
@@ -899,7 +900,7 @@ figcaption {
 
   .selfpara {
     padding-right: 0rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.6rem;
     text-align: justify;
     word-spacing: 0.02rem; /* Adjust as needed */
@@ -907,7 +908,7 @@ figcaption {
     /* filter: blur(0.2px); */
     /* word-spacing: 0.04em; 
   letter-spacing: 0.0em; */
-    filter: blur(clamp(0.05px, 0.8vw, 0.2px));
+    filter: blur(clamp(0.05px, 0.5vw, 0.1px));
   }
   .footnote {
     filter: blur(0.2px);
@@ -960,6 +961,6 @@ figcaption {
 
 @media (min-width: 1920px) {
   .selfpara {
-    filter: blur(clamp(0.1px, 0.5vw, 0.3px)); /* Less blur for large screens */
+    filter: blur(clamp(0.05px, 0.2vw, 0.2px)); /* Less blur for large screens */
   }
 }
