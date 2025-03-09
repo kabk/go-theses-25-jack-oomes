@@ -33,8 +33,7 @@ body {
   /* margin-left: -100%; */
   /* background-color: blue; */
   position: fixed; /* Fix the position so it stays on the screen even when scrolling */
-  top: 0;
-  left: 0;
+
   width: 100%; /* Cover the entire width of the viewport */
   height: 100%; /* Cover the entire height of the viewport */
   z-index: -1; /* Place it behind all other elements */
@@ -90,6 +89,7 @@ h1 {
   left: 50%;
   top: 30%;
   transform: translateX(-50%);
+  filter: blur(3.5px);
   /* filter: blur(0.2rem); */
   /* align-self: center;
   justify-self: center; */
@@ -303,13 +303,13 @@ h3 {
   grid-column: 1 / span 3;
   line-height: 2.5rem;
   text-align: justify;
-  word-spacing: 0.02em; /* Adjust as needed */
+  word-spacing: 0.04em; /* Adjust as needed */
   letter-spacing: 0.02rem; /* Adjust as needed */
   hyphens: auto;
 
   /* border-right: 0.1rem solid #000000; */
   /* padding-top: 2rem; */
-  /* filter: blur(0.04rem); */
+  filter: blur(0.6px);
 }
 footer {
   grid-column: 1 / span 2;
@@ -324,6 +324,7 @@ footer {
   font-size: 1.2rem;
   /* line-height: 200%; */
   padding-left: 0rem;
+  filter: blur(0.6px);
 }
 [id^="fnref-"] {
   color: rgb(0, 0, 0);
@@ -379,6 +380,7 @@ sup {
 .caption {
   /* position: absolute; */
   margin: 0rem;
+  margin-top: 0.4rem;
   /* padding-top: 0.6rem; */
   /* padding-bottom: 0.6rem; */
   padding-right: 0rem;
@@ -605,7 +607,7 @@ figcaption {
   /* text-align: left !important; */
   /* padding-left: 0.5rem; */
 
-  filter: blur(0.5pt);
+  filter: blur(0.6px);
   /* align-items: center;  
 
   width: 100%;
@@ -862,7 +864,7 @@ figcaption {
     /* height: 100vh; */
   }
   h1 {
-    width: 5rem;
+    filter: blur(0.7px);
   }
   .thesis {
     position: relative; /* Change to relative positioning so it flows with the layout */
@@ -902,14 +904,22 @@ figcaption {
     text-align: justify;
     word-spacing: 0.02rem; /* Adjust as needed */
     letter-spacing: 0.02rem;
+    filter: blur(0.2px);
     /* word-spacing: 0.04em; 
   letter-spacing: 0.0em; */
+  }
+  .footnote {
+    filter: blur(0.2px);
   }
 
   [id^="fnref-"] {
     color: rgb(0, 0, 0);
     text-decoration: none !important;
     font-size: 0.6rem;
+  }
+
+  figcaption {
+    filter: blur(0.2px);
   }
   .abstractpara {
     border-right: none;
