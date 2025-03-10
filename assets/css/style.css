@@ -846,7 +846,7 @@ figcaption {
   max-width: 100%; /* Ensure the images don't stretch beyond the parent div */
   z-index: 9900;
   object-fit: contain;
-  filter: saturate(180%);
+  filter: saturate(170%);
 }
 
 .fade-in-out {
@@ -871,15 +871,16 @@ figcaption {
     flex-direction: column;
     display: block;
     z-index: -1;
-    align-items: center;
   }
 
   /* .title img {
      height: 100vh; 
   } */
   h1 {
+    position: absolute;
     font-size: 5rem;
     filter: blur(1.7px);
+    margin-top: 2rem;
   }
   .thesis {
     position: relative; /* Change to relative positioning so it flows with the layout */
@@ -888,25 +889,36 @@ figcaption {
     width: 100%; /* Ensure it takes full width */
     font-size: 1rem;
     bottom: 0;
+
     /* Adjust font size for smaller screens */
     /* Optional: Center text */
   }
   .together-image {
-    width: 180%;
+    width: 170%;
+  }
+  .content {
+    z-index: 3;
+  }
+
+  .sunburst_2 {
+    z-index: 2;
+    filter: saturate(160%);
   }
 
   .sun-image_2 {
-    width: 100vw;
-    z-index: 100;
+    width: 90vw;
   }
 
   .sun-image {
-    width: 100vw;
-    margin-left: -7rem;
-    margin-top: 5rem;
-    opacity: 0.8;
+    width: 30vw;
   }
 
+  /* .sunburst {
+    transform: translateX(-15rem);
+  } */
+  .tablecontentgrid {
+    z-index: 3;
+  }
   .tablecontentgrid {
     display: block;
   }
@@ -960,16 +972,16 @@ figcaption {
     line-height: 1.6rem;
     word-spacing: 0.02em; /* Adjust as needed */
     letter-spacing: 0.02rem;
-    filter: blur(0.5px);
+    filter: blur(0.4px);
   }
   .tableofcontentext {
     font-size: 1.3rem;
     line-height: 1.6rem;
-    filter: blur(0.5px);
+    filter: blur(0.4px);
   }
 
   .italics {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .bibliographygrid {
