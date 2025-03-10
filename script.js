@@ -13,22 +13,26 @@ document.addEventListener("DOMContentLoaded", function () {
       figure.style.display = index === 0 ? "block" : "none";
     });
 
-    // Add click event to cycle through figures within its own slideshow
-    figures.forEach((figure, index) => {
-      figure.addEventListener("click", function () {
-        // Hide the current figure
-        figures[currentIndex].style.display = "none";
+    // Add click event to cycle through figures when clicking on pl.jpg or pr.jpg
+    const imgContainers = slideshow.querySelectorAll(".figimgcontainer img");
 
-        // Move to the next figure, loop back to start if at the end
-        currentIndex = (currentIndex + 1) % figures.length;
-
-        // Show the new figure
-        figures[currentIndex].style.display = "block";
+    imgContainers.forEach((img) => {
+      img.addEventListener("click", function () {
+        if (img.src.includes("pr.jpg")) {
+          // If 'pr.jpg' is clicked, move to the next figure
+          figures[currentIndex].style.display = "none";
+          currentIndex = (currentIndex + 1) % figures.length; // Loop back to the first figure if at the end
+          figures[currentIndex].style.display = "block";
+        } else if (img.src.includes("pl.jpg")) {
+          // If 'pl.jpg' is clicked, move to the previous figure
+          figures[currentIndex].style.display = "none";
+          currentIndex = (currentIndex - 1 + figures.length) % figures.length; // Loop to the last figure if at the start
+          figures[currentIndex].style.display = "block";
+        }
       });
     });
   });
 });
-
 window.onload = function () {
   // Get all the images inside .sunburst and .sunburst_2
   const sunImages1 = document.querySelectorAll(".sunburst .sun-image");
