@@ -51,7 +51,6 @@ body {
   height: auto; /* Maintain aspect ratio */
   max-width: 100%; /* Ensure the images don't stretch beyond the parent div */
   z-index: 9900;
-  filter: saturate(150%);
 }
 
 .title {
@@ -846,7 +845,6 @@ figcaption {
   max-width: 100%; /* Ensure the images don't stretch beyond the parent div */
   z-index: 9900;
   object-fit: contain;
-  filter: saturate(170%);
 }
 
 .fade-in-out {
@@ -902,7 +900,6 @@ figcaption {
 
   .sunburst_2 {
     z-index: 2;
-    filter: saturate(150%);
   }
 
   .sun-image_2 {
