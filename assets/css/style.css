@@ -51,6 +51,7 @@ body {
   height: auto; /* Maintain aspect ratio */
   max-width: 100%; /* Ensure the images don't stretch beyond the parent div */
   z-index: 9900;
+  filter: saturate(150%);
 }
 
 .title {
@@ -616,6 +617,7 @@ figcaption {
   /* padding-left: 0.5rem; */
 
   filter: blur(0.6px);
+  will-change: filter;
   /* align-items: center;  
 
   width: 100%;
@@ -923,10 +925,10 @@ figcaption {
     /* filter: blur(0.2px); */
     /* word-spacing: 0.04em; 
   letter-spacing: 0.0em; */
-    filter: blur(0.2px);
+    filter: blur(0.4px);
   }
   footer {
-    filter: blur(0.1px);
+    filter: blur(0.3px);
   }
 
   [id^="fnref-"] {
@@ -936,7 +938,7 @@ figcaption {
   }
 
   figcaption {
-    filter: blur(0.1px);
+    filter: blur(0.3px);
   }
   .abstract {
     filter: blur(0.2px);
