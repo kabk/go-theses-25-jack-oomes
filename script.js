@@ -93,6 +93,10 @@ window.onload = function () {
 
       // Add fade-in and fade-out classes
       clonedImage.classList.add("fade-in-out");
+
+      setTimeout(function () {
+        clonedImage.remove();
+      }, 10000);
     });
   }
 
