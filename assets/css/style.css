@@ -943,7 +943,6 @@ figcaption {
   letter-spacing: 0.0em; */
     filter: blur(0.4px);
     hyphens: auto;
-    hyphenate-limit-chars: 6 3 3;
   }
   footer {
     filter: blur(0.3px);
@@ -970,6 +969,7 @@ figcaption {
     padding: 0rem;
   }
   .tablecontainer {
+    margin-top: 2rem;
     padding: 0rem;
   }
   .abstracttext {
@@ -980,7 +980,6 @@ figcaption {
     text-align: left;
     filter: blur(0.4px);
     hyphens: auto;
-
     hyphenate-limit-chars: 6 3 3;
   }
   .tableofcontentext {
