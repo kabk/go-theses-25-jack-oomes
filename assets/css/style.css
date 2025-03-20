@@ -943,6 +943,7 @@ figcaption {
   letter-spacing: 0.0em; */
     filter: blur(0.4px);
     hyphens: auto;
+    will-change: filter;
   }
   footer {
     filter: blur(0.3px);

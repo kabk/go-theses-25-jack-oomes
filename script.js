@@ -1,4 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
+  function checkVisibility(entries) {
+    entries.map((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.visibility = "";
+      } else {
+        entry.target.style.visibility = "hidden";
+      }
+    });
+  }
+  const visibilityObserver = new IntersectionObserver(checkVisibility);
+
+  const blurringItems = document.querySelectorAll(
+    "body > .title, .tablecontentgrid > *, .content > *, .bibliographygrid > *"
+  );
+
+  blurringItems.forEach((item) => {
+    item.style.transform = "translate3d(0, 0, 0)";
+
+    visibilityObserver.observe(item);
+  });
+
   // Select all slideshow containers
   const slideshows = document.querySelectorAll(
     ".caption.slideshow, .capspiru.slideshow"
