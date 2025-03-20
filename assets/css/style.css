@@ -931,8 +931,8 @@ figcaption {
 
   .selfpara {
     padding-right: 0rem;
-    font-size: 1.6rem;
-    line-height: 2rem;
+    font-size: 2rem;
+    line-height: 2.3rem;
     text-align: left;
     word-spacing: 0.03rem; /* Adjust as needed */
     letter-spacing: 0.02rem;
@@ -965,8 +965,8 @@ figcaption {
     border-right: none;
   }
   .abstracttext {
-    font-size: 1.6rem;
-    line-height: 2rem;
+    font-size: 2rem;
+    line-height: 2.3rem;
     word-spacing: 0.02em; /* Adjust as needed */
     letter-spacing: 0.02rem;
     text-align: left;
