@@ -8,10 +8,17 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  const visibilityObserver = new IntersectionObserver(checkVisibility);
+  const visibilityObserver = new IntersectionObserver(checkVisibility, {
+    root: null,
+    rootMargin: "500px 0px 500px 0px",
+    threshold: 0,
+  });
 
+  // const blurringItems = document.querySelectorAll(
+  //   "body > .title, .tablecontentgrid > *, .content > *, .bibliographygrid > *"
+  // );
   const blurringItems = document.querySelectorAll(
-    "body > .title, .tablecontentgrid > *, .content > *, .bibliographygrid > *"
+    ".tablecontentgrid > *, .content > *, .bibliographygrid > *"
   );
 
   blurringItems.forEach((item) => {
@@ -96,7 +103,7 @@ window.onload = function () {
 
       setTimeout(function () {
         clonedImage.remove();
-      }, 10000);
+      }, 7000);
     });
   }
 
