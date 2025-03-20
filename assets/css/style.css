@@ -967,6 +967,10 @@ figcaption {
   }
   .abstractpara {
     border-right: none;
+    padding: 0rem;
+  }
+  .tablecontainer {
+    padding: 0rem;
   }
   .abstracttext {
     font-size: 1.7rem;
